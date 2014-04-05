@@ -14,7 +14,7 @@ namespace FluentAutomation.Generator.SpecflowPlugin
 		private static void SaveTestClass(TestClassGenerationContext generationContext)
 		{
 			generationContext.ScenarioInitializeMethod.Statements.Add(
-				new CodeSnippetExpression("ScenarioContext.Current[this.GetType().FullName] = this"));
+				new CodeSnippetExpression("ScenarioContext.Current[ScenarioContext.Current.ScenarioInfo.Title] = this"));
 		}
 
 		private static void AddBaseClass(TestClassGenerationContext generationContext)

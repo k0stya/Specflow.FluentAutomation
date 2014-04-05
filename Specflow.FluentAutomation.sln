@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAutomation.Generator.SpecflowPlugin", "FluentAutomation.Generator.SpecflowPlugin\FluentAutomation.Generator.SpecflowPlugin.csproj", "{CDF1F639-8EF5-4286-A2A2-4729A2D940B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow.FluentAutomation.Ext", "Specflow.FluentAutomation.Ext\Specflow.FluentAutomation.Ext.csproj", "{2280693C-1027-402A-B25D-94FD8E07122C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FF3258D1-8082-42C2-950B-B752A364AE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Selenium", "NUnit.Selenium\NUnit.Selenium.csproj", "{3411362F-4FF8-42AD-ACA1-B82357F21B23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,19 @@ Global
 		{CDF1F639-8EF5-4286-A2A2-4729A2D940B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF1F639-8EF5-4286-A2A2-4729A2D940B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF1F639-8EF5-4286-A2A2-4729A2D940B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2280693C-1027-402A-B25D-94FD8E07122C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2280693C-1027-402A-B25D-94FD8E07122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2280693C-1027-402A-B25D-94FD8E07122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2280693C-1027-402A-B25D-94FD8E07122C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3411362F-4FF8-42AD-ACA1-B82357F21B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3411362F-4FF8-42AD-ACA1-B82357F21B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3411362F-4FF8-42AD-ACA1-B82357F21B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3411362F-4FF8-42AD-ACA1-B82357F21B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3411362F-4FF8-42AD-ACA1-B82357F21B23} = {FF3258D1-8082-42C2-950B-B752A364AE22}
 	EndGlobalSection
 EndGlobal

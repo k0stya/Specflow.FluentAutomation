@@ -1,7 +1,10 @@
-﻿using BoDi;
+﻿using TechTalk.SpecFlow.Infrastructure;
+using BoDi;
 using FluentAutomation.Generator.SpecflowPlugin.Providers;
 using TechTalk.SpecFlow.Generator.Configuration;
 using TechTalk.SpecFlow.Generator.Plugins;
+
+[assembly: GeneratorPlugin(typeof(FluentAutomation.Generator.SpecflowPlugin.FluentAutomationTestGenerator))]
 
 namespace FluentAutomation.Generator.SpecflowPlugin
 {
