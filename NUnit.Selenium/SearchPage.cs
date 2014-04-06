@@ -5,7 +5,7 @@ namespace NUnit.Selenium
 	public class SearchPage : PageObject<SearchPage>
 	{
 		private const string SearchTextBox = "#gbqfq";
-		private const string SearchButton = "#gsr";
+		private const string ImagesLink = "#gsr";
 
 		public SearchPage(FluentTest test) : base(test)
 		{
@@ -18,9 +18,9 @@ namespace NUnit.Selenium
 			I.Enter(searchText).In(SearchTextBox);
 		}
 
-		public void ClickSearchButton()
+		public void ClickImakesLink()
 		{
-			I.Click(SearchButton);
+			I.Click(ImagesLink);
 		}
 
 		public void ShouldContainWikiLogo()

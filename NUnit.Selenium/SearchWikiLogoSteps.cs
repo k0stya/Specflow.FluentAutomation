@@ -11,23 +11,19 @@ namespace NUnit.Selenium
 		[Given(@"I navigated google")]
 		public void GivenINavigatedGoogle()
 		{
-			SeleniumWebDriver.Bootstrap(
-			   SeleniumWebDriver.Browser.Chrome
-		   );
-
 			Pages.Get<SearchPage>().Go();
 		}
 
 		[Given(@"entered ""(.*)"" to the search box")]
-		public void GivenEnteredToTheSearchBox(string p0)
+		public void GivenEnteredToTheSearchBox(string searchText)
 		{
-			Pages.Get<SearchPage>().EnterSearchText(p0);
+			Pages.Get<SearchPage>().EnterSearchText(searchText);
 		}
 
 		[When(@"I click Images link")]
 		public void WhenIClickImagesLink()
 		{
-			Pages.Get<SearchPage>().ClickSearchButton();
+			Pages.Get<SearchPage>().ClickImakesLink();
 		}
 
 		[Then(@"the resulting view should contain wiki logo")]
