@@ -19,7 +19,7 @@ namespace FluentAutomation.Generator.SpecflowPlugin
 
 		private static void AddBaseClass(TestClassGenerationContext generationContext)
 		{
-			generationContext.TestClass.BaseTypes.Add(typeof (FluentTest));
+			generationContext.TestClass.BaseTypes.Insert(0, new CodeTypeReference(typeof (FluentTest)));
 		}
 	}
 }
