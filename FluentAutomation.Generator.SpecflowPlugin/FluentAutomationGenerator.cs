@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using TechTalk.SpecFlow.Generator;
 
 namespace FluentAutomation.Generator.SpecflowPlugin
@@ -19,7 +20,7 @@ namespace FluentAutomation.Generator.SpecflowPlugin
 
 		private static void AddBaseClass(TestClassGenerationContext generationContext)
 		{
-			generationContext.TestClass.BaseTypes.Insert(0, new CodeTypeReference(typeof (FluentTest)));
+			generationContext.TestClass.BaseTypes.Insert(0, new CodeTypeReference(typeof(FluentAutomation.FluentTest)));
 		}
 	}
 }

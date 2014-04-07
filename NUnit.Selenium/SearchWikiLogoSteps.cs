@@ -1,6 +1,4 @@
-﻿using System;
-using FluentAutomation;
-using Specflow.FluentAutomation.Ext;
+﻿using Specflow.FluentAutomation.Ext;
 using TechTalk.SpecFlow;
 
 namespace NUnit.Selenium
