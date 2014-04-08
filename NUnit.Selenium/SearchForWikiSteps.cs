@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 namespace NUnit.Selenium
 {
 	[Binding]
-	public class SearchWikiLogoSteps
+	public class SearchForWikiSteps
 	{
 		[Given(@"I navigated google")]
 		public void GivenINavigatedGoogle()
@@ -24,10 +24,23 @@ namespace NUnit.Selenium
 			Pages.Get<SearchPage>().ClickImakesLink();
 		}
 
+		[When(@"I click wiki link")]
+		public void WhenIClickWikiLink()
+		{
+			var wikiPage = Pages.Get<SearchPage>().ClickOnWikiLink();
+			Pages.Set(wikiPage);
+		}
+
 		[Then(@"the resulting view should contain wiki logo")]
 		public void ThenTheResultingViewShouldContainWikiLogo()
 		{
 			Pages.Get<SearchPage>().ShouldContainWikiLogo();
+		}
+
+		[Then(@"the resulting page should be wikipedia")]
+		public void ThenTheResultingPageShouldBeWikipedia()
+		{
+			Pages.Get<WikipediaPage>().At();
 		}
 	}
 }

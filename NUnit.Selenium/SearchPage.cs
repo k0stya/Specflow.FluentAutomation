@@ -27,5 +27,11 @@ namespace NUnit.Selenium
 		{
 			I.Expect.Text("Wiki Logo");
 		}
+
+		public WikipediaPage ClickOnWikiLink()
+		{
+			I.Press("{ENTER}").Click("a:contains('Wikipedia')");
+			return Switch<WikipediaPage>();
+		}
 	}
 }

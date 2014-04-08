@@ -64,19 +64,20 @@
     <Compile Include="GlobalHooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPage.cs" />
-    <Compile Include="SearchWikiLogo.feature.cs">
+    <Compile Include="SearchForWiki.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchWikiLogo.feature</DependentUpon>
+      <DependentUpon>SearchForWiki.feature</DependentUpon>
     </Compile>
-    <Compile Include="SearchWikiLogoSteps.cs" />
+    <Compile Include="SearchForWikiSteps.cs" />
+    <Compile Include="WikipediaPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="SearchWikiLogo.feature">
+    <None Include="SearchForWiki.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SearchWikiLogo.feature.cs</LastGenOutput>
+      <LastGenOutput>SearchForWiki.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,10 @@
     <ChromeDriverInitScriptPath>$(ChromeDriverToolsPath)Init.ps1</ChromeDriverInitScriptPath>
     <ChromeDriverPath>$(ChromeDriverInstallPath)content\chromedriver.exe</ChromeDriverPath>
     <PowerShellExe Condition="'$(PowerShellExe)'==''">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShellExe>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <Target Name="DownloadChromeDriver" Label="DownloadChromeDriverBuildTask">
     <Exec Condition="!Exists('$(ChromeDriverPath)')" Command="$(PowerShellExe) -NonInteractive -executionpolicy Unrestricted -command &quot;&amp; { &amp;'$(ChromeDriverInitScriptPath)' '$(ChromeDriverInstallPath)' '$(ChromeDriverToolsPath)'} &quot;" />
