@@ -1,0 +1,7 @@
+<configuration>
+ <specFlow>
+		<plugins>
+			<add name="FluentAutomation" path="plugin" type="Generator"/>
+		</plugins>
+ </specFlow>
+</configuration>
