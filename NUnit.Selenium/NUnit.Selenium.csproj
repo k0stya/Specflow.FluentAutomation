@@ -61,21 +61,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseStepDefinitionExamples\SearchForTDD.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchForTDD.feature</DependentUpon>
+    </Compile>
     <Compile Include="GlobalHooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchPage.cs" />
-    <Compile Include="SearchForWiki.feature.cs">
+    <Compile Include="PageObjectExamples\Pages\SearchPage.cs" />
+    <Compile Include="PageObjectExamples\SearchForWiki.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SearchForWiki.feature</DependentUpon>
     </Compile>
-    <Compile Include="SearchForWikiSteps.cs" />
-    <Compile Include="WikipediaPage.cs" />
+    <Compile Include="PageObjectExamples\SearchForWikiSteps.cs" />
+    <Compile Include="PageObjectExamples\Pages\WikipediaPage.cs" />
+    <Compile Include="BaseStepDefinitionExamples\SearchForTDDSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BaseStepDefinitionExamples\SearchForTDD.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchForTDD.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
-    <None Include="SearchForWiki.feature">
+    <None Include="PageObjectExamples\SearchForWiki.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SearchForWiki.feature.cs</LastGenOutput>
     </None>
