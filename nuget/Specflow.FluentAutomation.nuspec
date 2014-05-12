@@ -8,7 +8,7 @@
 	<projectUrl>https://github.com/k0stya/Specflow.FluentAutomation</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Specflow plugin which adds FluentTest base class for all generated features. Also this package adds Specflow.FluentAutomation.Ext reference which contains Pages class for working with PageObjects.</description>
-    <releaseNotes>- Plugin dll should not be added to the proj file</releaseNotes>
+    <releaseNotes>- Added StepDefinitionBase class that exposes FluentTest properties such as I</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>Specflow Fluent Automation plugin</tags>
     <dependencies>
