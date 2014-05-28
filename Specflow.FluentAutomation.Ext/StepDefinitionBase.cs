@@ -11,7 +11,7 @@ namespace Specflow.FluentAutomation.Ext
 			get { return (FluentTest) ScenarioContext.Current[ScenarioContext.Current.ScenarioInfo.Title]; }
 		}
 
-		protected INativeActionSyntaxProvider I
+		protected IActionSyntaxProvider I
 		{
 			get { return CurrentTest.I; }
 		}
