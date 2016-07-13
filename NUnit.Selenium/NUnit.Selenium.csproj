@@ -65,33 +65,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseStepDefinitionExamples\SearchForTDD.feature.cs">
+    <Compile Include="BaseStepDefinitionExamples\Plain.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchForTDD.feature</DependentUpon>
+      <DependentUpon>Plain.feature</DependentUpon>
     </Compile>
     <Compile Include="GlobalHooks.cs" />
+    <Compile Include="PageObjectExamples\Pages\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PageObjectExamples\Pages\SearchPage.cs" />
-    <Compile Include="PageObjectExamples\SearchForWiki.feature.cs">
+    <Compile Include="PageObjectExamples\Pages\SecondPage.cs" />
+    <Compile Include="PageObjectExamples\PageObject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SearchForWiki.feature</DependentUpon>
+      <DependentUpon>PageObject.feature</DependentUpon>
     </Compile>
-    <Compile Include="PageObjectExamples\SearchForWikiSteps.cs" />
-    <Compile Include="PageObjectExamples\Pages\WikipediaPage.cs" />
-    <Compile Include="BaseStepDefinitionExamples\SearchForTDDSteps.cs" />
+    <Compile Include="PageObjectExamples\PageObjectSteps.cs" />
+    <Compile Include="BaseStepDefinitionExamples\PlainSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="BaseStepDefinitionExamples\SearchForTDD.feature">
+    <None Include="BaseStepDefinitionExamples\Plain.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SearchForTDD.feature.cs</LastGenOutput>
+      <LastGenOutput>Plain.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="PageObjectExamples\SearchForWiki.feature">
+    <None Include="PageObjectExamples\PageObject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SearchForWiki.feature.cs</LastGenOutput>
+      <LastGenOutput>PageObject.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
