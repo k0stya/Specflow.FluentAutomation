@@ -1,4 +1,5 @@
-﻿using Specflow.FluentAutomation.Ext;
+﻿using System.IO;
+using Specflow.FluentAutomation.Ext;
 using TechTalk.SpecFlow;
 
 namespace NUnit.Selenium
@@ -10,7 +11,9 @@ namespace NUnit.Selenium
         [Given(@"I'm on the homepage")]
         public void GivenIMOnTheHomepage()
         {
-            I.Open("http://localhost:9090/index.html");
+            var currentPath = Directory.GetCurrentDirectory();
+            var uri = string.Format("file:///{0}/testPages/index.html", currentPath);
+            I.Open(uri);
         }
 
         [When(@"I click on the 2nd page link")]

@@ -1,4 +1,5 @@
-﻿using FluentAutomation;
+﻿using System.IO;
+using FluentAutomation;
 
 namespace NUnit.Selenium
 {
@@ -8,8 +9,10 @@ namespace NUnit.Selenium
 
 		public HomePage(FluentTest test) : base(test)
 		{
-			Url = "http://localhost:9090/index.html";
-			At = () => I.Expect.Exists(SecondPageLink);
+            var currentPath = Directory.GetCurrentDirectory();
+            var uri = string.Format("file:///{0}/testPages/index.html", currentPath);
+		    Url = uri;
+            At = () => I.Expect.Exists(SecondPageLink);
 		}
 
 
