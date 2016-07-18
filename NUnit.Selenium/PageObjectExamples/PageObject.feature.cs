@@ -19,7 +19,7 @@ namespace NUnit.Selenium.PageObjectExamples
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Testing with page objects")]
-    public partial class TestingWithPageObjectsFeature
+    public partial class TestingWithPageObjectsFeature : FluentAutomation.FluentTest
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace NUnit.Selenium.PageObjectExamples
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Testing with page objects", "\tIn order to check that FluentAutomation integration works correctly\r\n\tAs a devel" +
                     "oper\r\n\tI want to have few automated scenarios", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
@@ -57,6 +57,7 @@ namespace NUnit.Selenium.PageObjectExamples
         public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioStart(scenarioInfo);
+            ScenarioContext.Current[ScenarioContext.Current.ScenarioInfo.Title] = this;
         }
         
         public virtual void ScenarioCleanup()
