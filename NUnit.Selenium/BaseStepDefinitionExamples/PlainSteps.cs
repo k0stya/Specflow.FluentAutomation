@@ -10,9 +10,9 @@ namespace NUnit.Selenium
 	{
         [Given(@"I'm on the homepage")]
         public void GivenIMOnTheHomepage()
-        {
-            var currentPath = Directory.GetCurrentDirectory();
-            var uri = string.Format("file:///{0}/testPages/index.html", currentPath);
+        { 
+            var currentPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            var uri = string.Format("{0}\\testPages\\index.html", currentPath);
             I.Open(uri);
         }
 

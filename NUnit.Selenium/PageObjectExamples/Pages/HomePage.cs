@@ -9,9 +9,9 @@ namespace NUnit.Selenium
 
 		public HomePage(FluentTest test) : base(test)
 		{
-            var currentPath = Directory.GetCurrentDirectory();
-            var uri = string.Format("file:///{0}/testPages/index.html", currentPath);
-		    Url = uri;
+            var currentPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            var uri = string.Format("{0}\\testPages\\index.html", currentPath);
+            Url = uri;
             At = () => I.Expect.Exists(SecondPageLink);
 		}
 
