@@ -4,8 +4,7 @@ using TechTalk.SpecFlow.Utils;
 
 namespace FluentAutomation.Generator.SpecflowPlugin.Providers
 {
-	public class 
-        NUnitTestGeneratorProvider : TechTalk.SpecFlow.Generator.UnitTestProvider.NUnitTestGeneratorProvider
+	public class NUnitTestGeneratorProvider : TechTalk.SpecFlow.Generator.UnitTestProvider.NUnitTestGeneratorProvider
 	{
 		public NUnitTestGeneratorProvider(CodeDomHelper codeDomHelper)
 			: base(codeDomHelper)
@@ -14,7 +13,7 @@ namespace FluentAutomation.Generator.SpecflowPlugin.Providers
 
 		public override void FinalizeTestClass(TestClassGenerationContext generationContext)
 		{
-            FluentAutomationGenerator.ModifyGeneratedClass(generationContext);
+			FluentAutomationGenerator.ModifyGeneratedClass(generationContext);
 			base.FinalizeTestClass(generationContext);
 		}
 	}
