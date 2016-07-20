@@ -9,9 +9,9 @@ namespace NUnit.Selenium
 		[BeforeScenario]
 		public void BeforeScenario()
 		{
-			SeleniumWebDriver.Bootstrap(
-			   SeleniumWebDriver.Browser.Chrome
-		   );
+		SeleniumWebDriver.Bootstrap(
+			SeleniumWebDriver.Browser.Firefox
+			);
 		}
 
 		[AfterScenario]

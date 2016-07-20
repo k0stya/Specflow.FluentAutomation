@@ -1,33 +1,74 @@
-﻿using TechTalk.SpecFlow.Infrastructure;
-using BoDi;
-using FluentAutomation.Generator.SpecflowPlugin.Providers;
-using TechTalk.SpecFlow.Generator.Configuration;
+﻿using System;
 using TechTalk.SpecFlow.Generator.Plugins;
+using FluentAutomation.Generator.SpecflowPlugin.Providers;
 
-[assembly: GeneratorPlugin(typeof(FluentAutomation.Generator.SpecflowPlugin.FluentAutomationTestGenerator))]
 
 namespace FluentAutomation.Generator.SpecflowPlugin
 {
 	public class FluentAutomationTestGenerator : IGeneratorPlugin
 	{
-		public void RegisterDependencies(ObjectContainer container)
+		public void Initialize(GeneratorPluginEvents generatorPluginEvents, GeneratorPluginParameters generatorPluginParameters)
 		{
-			container.RegisterTypeAs<NUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("nunit");
-			container.RegisterTypeAs<MbUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("mbunit");
-			container.RegisterTypeAs<MbUnit3TestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("mbunit.3");
-			container.RegisterTypeAs<XUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("xunit");
-			container.RegisterTypeAs<MsTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("mstest.2008");
-			container.RegisterTypeAs<MsTest2010GeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("mstest.2010");
-			container.RegisterTypeAs<MsTest2010GeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>("mstest");
+			generatorPluginEvents.CustomizeDependencies += this.GeneratorPluginEventsOnCustomizeDependencies;
 		}
-
-		public void RegisterCustomizations(ObjectContainer container, SpecFlowProjectConfiguration generatorConfiguration)
+		
+		private void GeneratorPluginEventsOnCustomizeDependencies(object sender, CustomizeDependenciesEventArgs customizeDependenciesEventArgs)
 		{
+			string unitTestProviderName = customizeDependenciesEventArgs.SpecFlowProjectConfiguration.GeneratorConfiguration.GeneratorUnitTestProvider;
+			unitTestProviderName = unitTestProviderName.ToLower();
 			
-		}
-
-		public void RegisterConfigurationDefaults(SpecFlowProjectConfiguration specFlowConfiguration)
-		{
+			switch (unitTestProviderName)
+			{
+				case "nunit":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<NUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				case "mbunit":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<MbUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				
+				case "mbunit.3":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<MbUnit3TestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				
+				case "xunit":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<XUnitTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				case "mstest.2008":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<MsTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				case "mstest.2010":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<MsTest2010GeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				case "mstest":
+				{
+					customizeDependenciesEventArgs.ObjectContainer
+						.RegisterTypeAs<MsTestGeneratorProvider, TechTalk.SpecFlow.Generator.UnitTestProvider.IUnitTestGeneratorProvider>();
+					break;
+				}
+				default:
+				{
+					throw new NotImplementedException(String.Format("Unsupported unit test provider: {0}", unitTestProviderName)); 
+				}
+			}
+		
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow.Generator;
+﻿using System.Diagnostics;
+using TechTalk.SpecFlow.Generator;
 using TechTalk.SpecFlow.Utils;
 
 namespace FluentAutomation.Generator.SpecflowPlugin.Providers

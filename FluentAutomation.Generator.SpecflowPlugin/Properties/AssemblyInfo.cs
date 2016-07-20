@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using FluentAutomation.Generator.SpecflowPlugin;
+using TechTalk.SpecFlow.Infrastructure;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -21,6 +23,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("57917965-bc7a-4224-a78a-7cd95dceaa4e")]
+[assembly: GeneratorPlugin(typeof(FluentAutomationTestGenerator))]
 
 // Version information for an assembly consists of the following four values:
 //
