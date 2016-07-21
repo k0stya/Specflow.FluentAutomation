@@ -2,18 +2,18 @@
 <package >
   <metadata>
     <id>Specflow.FluentAutomation</id>
-    <version>0.9.3</version>
+    <version>1.0.0</version>
     <authors>Kostya</authors>
     <owners>Kostya</owners>
 	<projectUrl>https://github.com/k0stya/Specflow.FluentAutomation</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Specflow plugin which adds FluentTest base class for all generated features. Also this package adds Specflow.FluentAutomation.Ext reference which contains Pages class for working with PageObjects.</description>
-    <releaseNotes>- Fixed FluentAutomation.Core v3 support</releaseNotes>
+    <releaseNotes>- Added SpecFlow 2.1 support</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>Specflow Fluent Automation plugin</tags>
     <dependencies>
-      <dependency id="Specflow" version="1.9.0" />
-	  <dependency id="FluentAutomation.Core" version="3.0.0" />
+    	<dependency id="Specflow" version="2.1.0" />
+	<dependency id="FluentAutomation.Core" version="3.0.0" />
     </dependencies>
 	
   </metadata>
