@@ -14,7 +14,7 @@ namespace FluentAutomation.Generator.SpecflowPlugin
 		
 		private void GeneratorPluginEventsOnCustomizeDependencies(object sender, CustomizeDependenciesEventArgs customizeDependenciesEventArgs)
 		{
-			string unitTestProviderName = customizeDependenciesEventArgs.SpecFlowProjectConfiguration.GeneratorConfiguration.GeneratorUnitTestProvider;
+			string unitTestProviderName = customizeDependenciesEventArgs.SpecFlowProjectConfiguration.SpecFlowConfiguration.UnitTestProvider;
 			unitTestProviderName = unitTestProviderName.ToLower();
 			
 			switch (unitTestProviderName)

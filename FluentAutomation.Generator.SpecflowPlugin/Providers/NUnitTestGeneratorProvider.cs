@@ -4,7 +4,7 @@ using TechTalk.SpecFlow.Utils;
 
 namespace FluentAutomation.Generator.SpecflowPlugin.Providers
 {
-	public class NUnitTestGeneratorProvider : TechTalk.SpecFlow.Generator.UnitTestProvider.NUnitTestGeneratorProvider
+	public class NUnitTestGeneratorProvider : TechTalk.SpecFlow.Generator.UnitTestProvider.NUnit3TestGeneratorProvider
 	{
 		public NUnitTestGeneratorProvider(CodeDomHelper codeDomHelper)
 			: base(codeDomHelper)
